@@ -38,8 +38,8 @@ class RegisterActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (password.isEmpty() || password.length < 6) {
-                signupPassword.error = "6 char password required"
+            if (password.isEmpty() || password.length < 8) {
+                signupPassword.error = "minimum 8 char password required"
                 signupPassword.requestFocus()
                 return@setOnClickListener
             }
@@ -54,9 +54,10 @@ class RegisterActivity : AppCompatActivity() {
             val p2 = android.util.Pair.create<View, String>(signupEmail, "login_to_signup_email")
             val p3 = android.util.Pair.create<View, String>(signupPassword, "login_to_signup_pass")
             val p4 = android.util.Pair.create<View, String>(imageView5, "login_to_signup_box")
+            val p5 = android.util.Pair.create<View, String>(signup_btn, "login_to_signup_btn")
 
             val options = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                ActivityOptions.makeSceneTransitionAnimation(this, p1, p2, p3, p4)
+                ActivityOptions.makeSceneTransitionAnimation(this, p1, p2, p3, p4, p5)
             } else {
                 TODO("VERSION.SDK_INT < LOLLIPOP")
             }

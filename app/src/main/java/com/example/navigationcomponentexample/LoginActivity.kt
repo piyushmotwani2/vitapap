@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
+
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
@@ -52,9 +53,10 @@ class LoginActivity : AppCompatActivity() {
             val p2 = android.util.Pair.create<View, String>(loginEmail, "login_to_signup_email")
             val p3 = android.util.Pair.create<View, String>(loginPassword, "login_to_signup_pass")
             val p4 = android.util.Pair.create<View, String>(imageView2, "login_to_signup_box")
+            val p5 = android.util.Pair.create<View, String>(login_btn, "login_to_signup_btn")
 
             val options = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                ActivityOptions.makeSceneTransitionAnimation(this, p1, p2, p3, p4)
+                ActivityOptions.makeSceneTransitionAnimation(this, p1, p2, p3, p4, p5)
             } else {
                 TODO("VERSION.SDK_INT < LOLLIPOP")
             }
@@ -62,7 +64,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
-
 
     private fun loginUser(email: String, password: String) {
         progressBar2.visibility = View.VISIBLE
